@@ -5,7 +5,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "VT323", monospace;
   overflow: hidden;
 }
 
@@ -23,7 +23,6 @@ body {
   transition: transform 1.2s ease;
 }
 
-/* Shared paper base look */
 .envelope-back,
 .envelope-front,
 .envelope-flap {
@@ -33,27 +32,24 @@ body {
   height: 100%;
   border-radius: 6px;
   border: 2px solid rgba(170, 140, 90, 0.3);
-  background-color: #f9f2e5;
+  background-color: #f9f4e9;
   background-image:
     url("https://www.transparenttextures.com/patterns/light-paper-fibers.png"),
     url("https://www.transparenttextures.com/patterns/subtle-grunge.png"),
-    linear-gradient(145deg, #fffaf3 0%, #f1e5d2 100%);
+    linear-gradient(145deg, #fffdf6 0%, #f1e8d8 100%);
   background-blend-mode: multiply;
-  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Back layer */
 .envelope-back {
   transform: translateZ(-1px);
 }
 
-/* Front bottom flap */
 .envelope-front {
   clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
   z-index: 2;
 }
 
-/* Top flap */
 .envelope-flap {
   clip-path: polygon(0 0, 50% 50%, 100% 0);
   transform-origin: top center;
@@ -62,44 +58,52 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* --- INVITE LETTER --- */
+/* --- INVITE CARD --- */
 .letter {
   position: absolute;
   top: 68%;
   left: 50%;
-  width: 90%;
+  width: 84%; /* made slightly narrower */
   background: #fffaf0;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  padding: 30px;
+  padding: 25px;
   transform: translate(-50%, 40%);
   opacity: 0;
   transition: all 1.2s ease;
   z-index: 1;
   background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  font-family: "VT323", monospace;
+  color: #5a4634;
+  letter-spacing: 0.5px;
 }
 
 .letter h2 {
   font-family: "VT323", monospace;
-  font-size: 2.6em;
-  color: #5a4634;
+  font-size: 2.4em;
+  margin-bottom: 10px;
   text-align: center;
-  letter-spacing: 1px;
 }
 
+/* --- FORM --- */
 form {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
 input, select, button {
-  padding: 10px;
+  font-family: "VT323", monospace;
+  font-size: 1.1em;
+  width: 80%; /* smaller width */
+  padding: 8px;
   border: 1px solid #cbb79f;
-  border-radius: 6px;
-  font-size: 1em;
+  border-radius: 4px;
   background-color: #fffdf9;
+  text-align: center;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
 button {
