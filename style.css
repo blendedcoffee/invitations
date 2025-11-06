@@ -18,8 +18,10 @@ body {
 /* --- Envelope --- */
 .envelope {
   position: relative;
-  width: 520px;
-  height: 340px;
+  width: 80vw;       /* scaled with viewport width */
+  max-width: 520px;  /* limits desktop size */
+  height: auto;
+  aspect-ratio: 520 / 340; /* keeps envelope proportion */
   transform-style: preserve-3d;
   cursor: pointer;
   transition: transform 1.2s ease;
@@ -65,11 +67,12 @@ body {
   position: absolute;
   top: 68%;
   left: 50%;
-  width: 84%; /* slightly smaller than envelope */
+  width: 84%; /* % of envelope width */
+  max-width: 440px; /* cap width on large screens */
   background: #fffaf0;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  padding: 25px;
+  padding: 5vw;  /* scales with screen size */
   transform: translate(-50%, 40%);
   opacity: 0;
   transition: all 1.2s ease;
@@ -82,7 +85,8 @@ body {
 
 .letter h2 {
   font-family: "VT323", monospace;
-  font-size: 2.4em;
+  font-size: 2.4vw;  /* scales with screen width */
+  max-font-size: 2.4em;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -98,8 +102,9 @@ form {
 
 input, select, button {
   font-family: "VT323", monospace;
-  font-size: 1.1em;
-  width: 80%; /* narrower than card */
+  font-size: 1.5vw;
+  width: 80%;
+  max-width: 300px;
   padding: 8px;
   border: 1px solid #cbb79f;
   border-radius: 4px;
@@ -123,7 +128,7 @@ button:hover {
 
 /* --- Open State --- */
 .envelope.open {
-  transform: translateY(100px);
+  transform: translateY(15vh); /* slide down based on viewport height */
 }
 
 .envelope.open .envelope-flap {
@@ -131,37 +136,36 @@ button:hover {
 }
 
 .envelope.open .letter {
-  transform: translate(-50%, -120%);
+  transform: translate(-50%, -35vh); /* slide up based on viewport height */
   opacity: 1;
 }
 
-/* --- MOBILE RESPONSIVE --- */
+/* --- MOBILE / PORTRAIT RESPONSIVE --- */
 @media (max-width: 600px) {
   .envelope {
-    width: 90%;
-    height: auto;
+    width: 90vw;      /* almost full width of screen */
   }
 
   .letter {
     width: 90%;
-    padding: 20px;
+    padding: 4vw;
     transform: translate(-50%, 35%);
   }
 
   .letter h2 {
-    font-size: 1.8em;
+    font-size: 6vw; /* larger on small screens */
   }
 
   input, select, button {
     width: 90%;
-    font-size: 1em;
+    font-size: 4vw;
   }
 
   .envelope.open {
-    transform: translateY(60px);
+    transform: translateY(12vh);
   }
 
   .envelope.open .letter {
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -30vh);
   }
 }
