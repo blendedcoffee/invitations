@@ -1,6 +1,6 @@
 /* --- Body --- */
 body {
-  background: #fff9b0;
+  background: radial-gradient(circle at top, #fffaf3 0%, #f3ebdd 100%);
   height: 100vh;
   margin: 0;
   display: flex;
@@ -131,6 +131,7 @@ button:hover {
   transform: translate(-50%, -45vh); /* more upward so it's fully visible */
   opacity: 1;
 }
+
 .envelope.open .envelope-flap {
   transform: rotateX(-170deg);
 }
