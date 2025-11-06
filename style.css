@@ -80,11 +80,11 @@ body {
 }
 
 .letter h2 {
-  font-family: "Great Vibes", cursive;
-  font-size: 2.2em;
-  margin-bottom: 10px;
-  color: #7b5e3e;
+  font-family: "VT323", monospace;
+  font-size: 2.6em;
+  color: #5a4634;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 form {
